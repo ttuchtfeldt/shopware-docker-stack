@@ -9,10 +9,9 @@ services:
       - mittwald_shopware_mailcatcher:smtp
     volumes:
       - ./Volumes/Shop/Config/php/php.ini:/usr/local/etc/php/php.ini
+      - data-sync-mittwald:/var/www/html:rw
     environment:
       VIRTUAL_HOST: www.mittwald-shopware.dev
-    volumes_from:
-      - container:data-sync-mittwald:rw
 
   mittwald_shopware_db:
     container_name: mittwald_schulung_db
